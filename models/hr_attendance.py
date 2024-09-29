@@ -11,6 +11,9 @@ class HrAttendance(models.Model):
                                           ('manual', "Manual")],
                                readonly=True,
                                default='manual')
+    # Many2one field to represent that each attendance can only have one device
+    zk_device_id = fields.Many2one('zk.device', string='Attendance Device', ondelete='cascade')
+     
 
 
 
