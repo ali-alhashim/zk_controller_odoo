@@ -112,6 +112,7 @@ class ZkController(http.Controller):
                                     request.env['hr.attendance'].sudo().create({
                                         'employee_id': employee.id,
                                         'check_in': naive_utc_time,
+                                        'in_mode' : 'zk-device',
                                         
                                     })
                                     _logger.info(f"Created check-in for {employee.name} at {naive_utc_time}.")
